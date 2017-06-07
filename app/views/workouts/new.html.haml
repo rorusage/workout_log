@@ -1,0 +1,10 @@
+.col-md-4.col-md-offset-4
+  %h1 新增健身紀錄
+  %br
+
+  =simple_form_for @workout do |f|
+    .form-group
+      = f.input :goal, input_html: { class: "form-control" }
+      = f.input :feeling, input_html: { class: "form-control" }
+      = f.input :total_time, input_html: { class: "form-control" }s
+    = f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submitting..."}

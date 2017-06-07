@@ -1,0 +1,24 @@
+.col-md-4.col-md-offset-4
+  %h3 Goal : #{@workout.goal}
+  %h5= @workout.created_at
+  %h4 Feeling : #{@workout.feeling}
+  %h4 Total Time : #{@workout.total_time} hrs
+  = link_to("Back", workouts_path, class: "btn btn-info")
+  = link_to("Edit", edit_workout_path(@workout), class: "btn btn-primary")
+  = link_to("Delete", workout_path(@workout), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"})
+  %hr
+
+  %h3 Items :
+  %br
+
+  - @items.each do |item|
+    %h4 Do what : #{item.name}
+    %h4 Set : #{item.set}
+    %h4 Rep. : #{item.rep_time}
+
+    .button_group
+      = link_to("Edit", edit_workout_item_path(@workout, item), class: "btn btn-primary")
+      = link_to("Delete", workout_item_path(@workout, item), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"})
+    %hr
+  = render "items/item"
+

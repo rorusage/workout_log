@@ -1,0 +1,9 @@
+.col-md-4.col-md-offset-4
+  - @workouts.each do |workout|
+    %h3= workout.created_at
+    %h3= link_to(workout.goal, workout_path(workout))
+
+    .button-group
+      = link_to("Edit", edit_workout_path(workout), class: "btn btn-primary")
+      = link_to("Delete", workout_path(workout), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"})
+    %hr

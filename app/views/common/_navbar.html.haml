@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{:type => "button", "data-toggle" => "collapse", "data-target" => "#example-navbar-collapse"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"} Workout Log
+
+    .collapse.navbar-collapse{:id => "example-navbar-collapse"}
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to("New Workout Log", new_workout_path)
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+.cl-md-12
+  %h3 修改項目
+  %br
+
+  = simple_form_for [@workout, @item] do |f|
+    .form-group
+      = f.input :name, input_html: { class: "form-control" }
+      = f.input :set, input_html: { class: "form-control" }
+      = f.input :rep_time, input_html: { class: "form-control" }
+    = f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submitting..."}
