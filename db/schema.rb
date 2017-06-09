@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606095731) do
+ActiveRecord::Schema.define(version: 20170609091154) do
 
   create_table "items", force: :cascade do |t|
     t.text     "name"
@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20170606095731) do
   create_table "workouts", force: :cascade do |t|
     t.text     "goal"
     t.text     "feeling"
-    t.float    "total_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "total_time"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "workout_date"
   end
 
 end

@@ -1,6 +1,6 @@
 .col-md-4.col-md-offset-4
   - @workouts.each do |workout|
-    %h3= workout.created_at
+    %h3= workout.workout_date.strftime("%A %B %d")
     %h3= link_to(workout.goal, workout_path(workout))
 
     .button-group

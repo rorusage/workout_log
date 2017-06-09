@@ -1,8 +1,8 @@
 .col-md-4.col-md-offset-4
   %h3 Goal : #{@workout.goal}
-  %h5= @workout.created_at
+  %h5= @workout.workout_date.strftime("%A %B %d")
   %h4 Feeling : #{@workout.feeling}
-  %h4 Total Time : #{@workout.total_time} hrs
+  %h4 Total Time : #{@workout.total_time}
   = link_to("Back", workouts_path, class: "btn btn-info")
   = link_to("Edit", edit_workout_path(@workout), class: "btn btn-primary")
   = link_to("Delete", workout_path(@workout), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"})
@@ -20,5 +20,5 @@
       = link_to("Edit", edit_workout_item_path(@workout, item), class: "btn btn-primary")
       = link_to("Delete", workout_item_path(@workout, item), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"})
     %hr
-  = render "items/item"
+  = render "items/new"
 

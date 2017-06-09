@@ -4,6 +4,7 @@
 
   =simple_form_for @workout do |f|
     .form-group
+      = f.input :workout_date
       = f.input :goal, input_html: { class: "form-control" }
       = f.input :feeling, input_html: { class: "form-control" }
       = f.input :total_time, input_html: { class: "form-control" }
